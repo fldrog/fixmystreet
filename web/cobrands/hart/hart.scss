@@ -39,61 +39,67 @@ select { background: #fff; border: 1px solid #768b9a; border-color: #768b9a #d1d
 h1, h2, h3, h4, h5, h6, legend { font-family: 'Gill Sans MT', 'Trebuchet MS', Calibri, sans-serif; }
 body { color: #333; font-family: "Gill Sans MT", Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.4; background-color: $base_bg;}
 
-// #header renamed to #hart-header
-.hart-header {
-    padding: 20px 20px 0 20px;
-}
-.hart-header, .hart-header-wrapper {
-    background-color: $hart_primary;
+#site-header {
+    height: 6em;
 }
 
-.hart-header-wrapper {
+body.frontpage #site-header {
+    height: 13em;
+}
+
+.nav-wrapper-2, 
+body.mappage .nav-wrapper .nav-wrapper-2,
+body.frontpage .nav-wrapper-2 {
+    border: 0;
+    min-height: auto;
+    background-color: $hart_primary;
     height: 173px;
 }
 
-#site-header {
-    display: none;
+@media only screen and (min-width:48em) {
+	#main-nav {
+	  margin-top: 106px;
+          margin-left: 132px;
+	  
+	  ul {
+	    float: none;
+	  }
+	}
+
+	#main-nav ul li {
+	  text-align: center;
+	  text-transform: uppercase;
+	  padding: 0 15px;
+	  font-size: 16px;
+	  border-right: solid 1px white;
+	  line-height: 1.5em;
+	}
+
+	#main-nav ul li a {
+	    padding: 0;
+	    font-size: inherit;
+	}
+
+	#main-nav ul li:last-child {
+	    border-right: none;
+	}
+
+	#main-nav ul li a:link, #main-nav ul li a:visited {
+	  color: #fff;
+	}
+
+	#main-nav ul li:hover, #main-nav ul li:hover a, {
+	  background-color: white;
+	  color: black;
+	  text-decoration: none;
+	}
 }
 
-
-
-@media only screen and (max-width: 48em) {
-    .hart-header-wrapper {
-        height: auto;
+@media only screen and (max-width: 61em) and (min-width: 48em) {
+    #main-nav {
+        padding-left: 0px;
+        float:none;
     }
-
-    #site-header {
-        display: block;
-    }
-}
-
-.header-nav {
-  float: left;
-  margin-top: 96px;
-  margin-left: 6px;
-}
-
-.header-nav li {
-  float: left;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0 15px;
-  font-size: 16px;
-  border-right: solid 1px white;
-}
-
-.header-nav li:last-child {
-    border-right: none;
-}
-
-.header-nav a:link, .header-nav a:visited {
-  color: #fff;
-}
-
-.header-nav li:hover, .header-nav li:hover a, {
-  background-color: white;
-  color: black;
-  text-decoration: none;
 }
 
 /* -------- For Google translate select box only */
@@ -102,21 +108,53 @@ body { color: #333; font-family: "Gill Sans MT", Arial, 'Helvetica Neue', Helvet
 .header-nav div#google_translate_element .goog-te-gadget .goog-te-combo option { background:#fff; color: #666; padding: 1px 0; margin: 0; }
 /* --- */
 
-.logo {
-    padding: 0;
-    float: left;
+body.frontpage #site-logo,
+#site-logo {
+    top: 1em;
+    left: 1em;
+    background: url("/cobrands/hart/hart-logo-inverse-small.gif") 0 0 no-repeat;
+    width: 70px;
+    height: 75px;
+    @media only screen and (min-width: 48em) {
+        background: url("/cobrands/hart/hart-logo.png") 0 0 no-repeat;
+        width: 123px;
+        height: 132px;
+    }
 }
 
-.sign-in {float:right; margin-top:-87px; width: 650px; text-align: right;}
+.sign-in {
+    float:right;
+    margin: 1em 1em 0.5em 0em;
+}
+@media only screen and (min-width:48em) {
+        .sign-in {
+          float:right;
+          margin-top:-87px;
+          height: 173px;
+        }
+}
 .sign-in a:link, .sign-in a:visited {color:#333; font-weight:bold; text-decoration:none;}
 .sign-in a:hover, .sign-in a:active {text-decoration:underline;}
 
+.main-menu-wrapper {
+    position: absolute;
+    z-index:2;
+    width:100%;
+}
+
+body.mappage .main-menu-wrapper {
+    position: fixed
+}
+
 .main-menu {
+  margin-top: 173px;
+  background-color: #FFF;
+  height: 2em;
 }
 
 .main-menu li {
   float: left;
-  width: 100px;
+  margin-left: 1em;
   text-align: center;
   font-family: 'Gill Sans MT', 'Trebuchet MS', Calibri, sans-serif;
 }
@@ -131,6 +169,26 @@ body { color: #333; font-family: "Gill Sans MT", Arial, 'Helvetica Neue', Helvet
 }
 
 .main-menu li.home a:hover, .main-menu li.home a:active {
+}
+
+#front-main {
+  background-color: #FFF;
+
+  #front-main-container {
+    background-color: $hart_primary;
+    padding-bottom: 1em;
+  }
+}
+
+#postcode-intro {
+  background-color: #FFF;
+  color: $hart_primary;
+  padding-bottom: 1em;
+}
+
+.content,
+body.frontpage .table-cell .content {
+  margin-bottom: 2em;
 }
 
 //#search { float: right; padding: 10px 17px; width: 270px; }
@@ -203,6 +261,11 @@ body { color: #333; font-family: "Gill Sans MT", Arial, 'Helvetica Neue', Helvet
 
 //#search input { display: inline; margin: 0; @include border-radius(0em); }
 //#search input.button { font-weight: normal; text-transform: none; }
+// The footer breaks the map pages layout, easier to exclude it than
+// work out how to make it not be broken.
+body.mappage .hart-footer-wrapper {
+  display: none;
+}
 #hart-footer {
   padding-bottom: 60px;
 }
@@ -216,7 +279,12 @@ body { color: #333; font-family: "Gill Sans MT", Arial, 'Helvetica Neue', Helvet
 }
 
 #hart-powered-by {
-    clear: both;
+    float: left;
+    margin-right: 4em;
+    img {
+        float: none;
+        margin-top: 0;
+    }
 }
 
 .issue-list-a li .text small {

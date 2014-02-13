@@ -1,10 +1,12 @@
 @import "_colours";
 @import "../sass/layout";
 
-.hart-wrapper { background: #fff; }
-.offline .hart-wrapper { padding-bottom: 20px; }
+@media only screen and (min-width: 48em) {
+  .content {
+    margin-top: 11em;
+  }
+}
 
-// So that map appears underneath the header
-.hart-header-wrapper {
-    position: fixed;
+#report-a-problem-sidebar {
+  top: 11em;
 }

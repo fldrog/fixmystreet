@@ -1,6 +1,3 @@
-                <p id="hart-powered-by" class="desk-only">
-                    <a href="http://www.mysociety.org/for-councils/fixmystreet/">Powered by <img src="/cobrands/hart/fms-logo.png" alt="FixMyStreet" style="height:20px;"></a>
-                </p>
             </div><!-- .content role=main -->
 
         </div><!-- .container -->
@@ -40,7 +37,8 @@
                 [% END %]
             </div>
         </div>
-        <div class="main-menu desk-only">
+        <div class="main-menu-wrapper desk-only">
+            <div class="main-menu">
             <ul>
                 <li class="home"><[% IF c.req.uri.path == '/' %]span[% ELSE %]a href="/"[% END %] class="report-a-problem-btn"
                     >[% "Report" %]</[% c.req.uri.path == '/' ? 'span' : 'a' %]></li>[%
@@ -53,8 +51,8 @@
                 %]<li class="last"><[% IF c.req.uri.path == '/faq' %]span[% ELSE %]a href="/faq"[% END
                     %]>[% loc("Help") %]</[% c.req.uri.path == '/faq' ? 'span' : 'a' %]></li>
             </ul>
+            </div>
         </div>
-        <h1 class="main desk-only">Reporting a problem in Hart&rsquo;s streets or parks</h1>
     </div>
 
     <div class="hart-footer-wrapper">
@@ -62,6 +60,9 @@
         <div class="hart-wrapper">
             <div class="hart-ie_wrapper">
                 <div id="hart-footer" class="desk-only">
+                        <p id="hart-powered-by" class="desk-only">
+                            <a href="http://www.mysociety.org/for-councils/fixmystreet/">Powered by <img src="/cobrands/hart/fms-logo.png" alt="FixMyStreet" style="height:20px;"></a>
+                        </p>
                 	<p class="copy">&copy; Hart District Council </p>
 
                     <!--
@@ -80,5 +81,6 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
