@@ -55,7 +55,7 @@ $(function(){
 
     var cobrand = $('meta[name="cobrand"]').attr('content');
     var is_small_map = false;
-    if (cobrand === 'bromley' || cobrand === 'hart') {
+    if (cobrand === 'bromley') {
         is_small_map = true;
     }
 
@@ -80,7 +80,7 @@ $(function(){
             }
             if (typeof fixmystreet !== 'undefined' && fixmystreet.page == 'around') {
                 // Immediately go full screen map if on around page
-                if (cobrand !== 'bromley' && cobrand !== 'hart') {
+                if (cobrand !== 'bromley') {
                     $('#site-header').hide();
                 }
                 $('#map_box').prependTo('.wrapper').css({
@@ -441,7 +441,7 @@ $.fn.drawer = function(id, ajax) {
     if (!$('html.mobile').length) {
         if (!($('body').hasClass('frontpage'))){
             var offset = -18 * 16;
-            if (cobrand === 'bromley' || cobrand === 'hart') {
+            if (cobrand === 'bromley') {
                 offset = -110;
             }
             heightFix(window, '.content', offset, 1);
