@@ -58,6 +58,8 @@ sub contact_email {
 }
 sub contact_name { 'Hart District Council (do not reply)'; }
 
+sub default_map_zoom { 3 }
+
 sub reports_per_page { return 20; }
 
 1;
