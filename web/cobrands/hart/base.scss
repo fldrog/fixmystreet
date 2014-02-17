@@ -60,3 +60,8 @@ h1.main {
 #form_sign_in {
     margin-top: 1em;
 }
+
+#front-main {
+    /* default on mobile view, preventing jagged hart-green box */
+    margin: 0;
+}
