@@ -63,5 +63,19 @@ h1.main {
 
 #front-main {
     /* default on mobile view, preventing jagged hart-green box */
+
     margin: 0;
+    padding: 1em;
+
+    #postcodeForm {
+        padding: 1em;
+        div {
+            padding-top: 0px;
+            input#pc {
+            }
+            input#sub {
+                height: 100%;
+            }
+        }
+    }
 }
