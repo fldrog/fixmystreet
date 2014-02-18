@@ -7,6 +7,13 @@
 @import "compass";
 @import "_colours";
 
+/* from http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+/* For IE 6/7 only */
+.clearfix { *zoom: 1; }
+
 
 // Taken from Bromley's form css
 input[type=text],
@@ -188,13 +195,6 @@ body.frontpage .table-cell .content {
   margin-bottom: 2em;
 }
 
-//#search { float: right; padding: 10px 17px; width: 270px; }
-//#search label {display:none;}
-//#search input { background: #ececec; border: 1px solid #768b9a; border-color: #768b9a #d1dee8 #d1dee8 #768b9a; line-height: 9px; padding: 6px 5px 4px; width: 184px; }
-//#search input.button { background: #fff; border: 1px solid #8596a8; color: #333; font-family: 'Gill Sans', 'Trebuchet MS', Calibri, sans-serif; font-size:133%; height: 27px; line-height: 27px; padding: 0; vertical-align: top; width: 70px; }
-
-// #footer renamed to #hart-footer, fixed font size.
-
 .hart-footer-wrapper {
     #footer_outside_wrapper {
         display: block;
@@ -205,28 +205,25 @@ body.frontpage .table-cell .content {
             }
             #footer-right {
                 float: right;
-                width: 329px;
+                max-width: 329px;
                 .region-footer-right {
                     float: left;
-                    width: 319px;
+                    max-width: 319px;
                 }
             }
             #footer-images {
                 display: block;
-                width: 300px;
+                max-width: 300px;
             }
         }
     }
     .footer_border {
         display: block;
-        width: 1024px;
     }
     background-color: #4F5757;
     clear: both;
-    width:100%; 
     height: auto;
     overflow: hidden;
-    display: block;
     bottom: 0;
     padding-bottom: 60px;
     padding:30px 15px 50px; 
