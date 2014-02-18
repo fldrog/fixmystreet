@@ -39,14 +39,6 @@ select { background: #fff; border: 1px solid #768b9a; border-color: #768b9a #d1d
 h1, h2, h3, h4, h5, h6, legend { font-family: 'Gill Sans MT', 'Trebuchet MS', Calibri, sans-serif; }
 body { color: #333; font-family: "Gill Sans MT", Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.4; background-color: $base_bg;}
 
-#site-header {
-    height: 6em;
-}
-
-body.frontpage #site-header {
-    height: 13em;
-}
-
 .nav-wrapper-2, 
 body.mappage .nav-wrapper .nav-wrapper-2,
 body.frontpage .nav-wrapper-2 {
@@ -57,6 +49,10 @@ body.frontpage .nav-wrapper-2 {
 }
 
 @media only screen and (min-width:48em) {
+    body.frontpage #site-header {
+        height: 13em;
+    }
+
 	#main-nav {
 	  margin-top: 106px;
       margin-left: 148px;
@@ -111,12 +107,13 @@ body.frontpage .nav-wrapper-2 {
 body.frontpage #site-logo,
 #site-logo {
     display: block;
-    top: 1em;
-    left: 1em;
-    background: url("/cobrands/hart/hart-logo-inverse-small.gif") 0 0 no-repeat;
-    width: 70px;
-    height: 75px;
+    background: url("/cobrands/hart/hart-logo-mobile.png") 0 0 no-repeat;
+    margin: 10px;
+    padding-left: 10px;
+    position: inherit;
     @media only screen and (min-width: 48em) {
+        margin: 0;
+        padding: 0;
         background: url("/cobrands/hart/hart-logo.png") 0 0 no-repeat;
         width: 123px;
         height: 132px;
