@@ -199,17 +199,43 @@ body.frontpage .table-cell .content {
 // #footer renamed to #hart-footer, fixed font size.
 
 .hart-footer-wrapper {
+    #footer_outside_wrapper {
+        display: block;
+        #footer_inside_wrapper {
+            display: block;
+            .footer_wrapper {
+                display: block;
+            }
+            #footer-right {
+                float: right;
+                width: 329px;
+                .region-footer-right {
+                    float: left;
+                    width: 319px;
+                }
+            }
+            #footer-images {
+                display: block;
+                width: 300px;
+            }
+        }
+    }
+    .footer_border {
+        display: block;
+        width: 1024px;
+    }
     background-color: #4F5757;
     clear: both;
     width:100%; 
+    height: auto;
+    overflow: hidden;
+    display: block;
+    bottom: 0;
     padding-bottom: 60px;
     padding:30px 15px 50px; 
     margin-left:-15px; 
     color:#fff; 
     font-size:92%;
-    img { 
-        float: right; margin-top: -18px; 
-    }
     p {
       margin: 0;
     }
@@ -219,21 +245,32 @@ body.frontpage .table-cell .content {
     a:hover, a:active { 
         text-decoration: underline;
     }
-}
-.footer-nav,  {
-    float: right; 
-    height:35px; 
-    margin-top: -15px; 
 
-    li { 
-        list-style-type: none;
-        border-right:1px solid #fff; 
-        float: left; 
-        line-height: 1; 
-        padding: 0 20px; 
+    #hart-footer {
+        width: 709px;
     }
-    li:last-child { 
-        border: none; 
+
+    #copyright-block {
+        float: left;
+        margin-left: 2em;
+        display: block;
+        line-height: 1.5em;
+    }
+    .footer-nav,  {
+        float: right; 
+        height:35px; 
+        margin-top: -15px; 
+
+        li { 
+            list-style-type: none;
+            border-right:1px solid #fff; 
+            float: left; 
+            line-height: 1; 
+            padding: 0 20px; 
+        }
+        li:last-child { 
+            border: none; 
+        }
     }
 }
 
@@ -297,6 +334,7 @@ body.mappage .hart-footer-wrapper {
 }
 #hart-powered-by {
     float: left;
+    margin-left: 2em;
     margin-right: 4em;
     img {
         float: none;
@@ -311,3 +349,4 @@ body.mappage .hart-footer-wrapper {
 #fms_pan_zoom {
     top: 12em;
 }
+
