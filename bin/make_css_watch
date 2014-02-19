@@ -24,7 +24,7 @@ my $watcher = File::ChangeNotify->instantiate_watcher(
 
 sub title {
     my $what = shift;
-    system 'xtitle', $what;
+    # system 'xtitle', $what;
 }
  
 say sprintf "Watching [%s] for %s", (join ',' => @dirs), $filter;
