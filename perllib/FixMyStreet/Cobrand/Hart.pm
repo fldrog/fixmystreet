@@ -44,6 +44,12 @@ sub example_places {
     return ( 'GU51 4JX', 'Primrose Dr' );
 }
 
+sub hidden_categories {
+    return (
+        'Graffiti on bridges/subways',
+    );
+}
+
 sub send_questionnaires {
     return 0;
 }
