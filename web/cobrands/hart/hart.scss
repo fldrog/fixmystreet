@@ -448,3 +448,7 @@ blockquote#hart_hants_note {
     background-color: lighten($hart_primary, 30%);
     padding: 0.5em;
 }
+
+.banner {
+    z-index: 1;
+}
