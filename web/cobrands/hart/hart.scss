@@ -156,8 +156,10 @@ body.frontpage #site-logo,
     }
 }
 
-body.mappage .main-menu-wrapper {
-    position: fixed
+@media only screen and (min-width:48em) {
+    body.mappage .main-menu-wrapper {
+        position: fixed
+    }
 }
 
 .main-menu {
